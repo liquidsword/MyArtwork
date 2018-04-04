@@ -1,0 +1,17 @@
+<p><%=@artwork.art%></p>
+
+        <form method = "post" action ="/artwork/<%=@artwork.id%>/delete">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Artwork">
+
+        </form>
+
+
+        <a href= "/artwork/<%=@artwork.id%>/edit">Edit Artwork</a>
+
+
+
+
+
+
+
