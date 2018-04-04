@@ -13,9 +13,9 @@ class UsersController < ApplicationController
         end
     end
 
-    post '/join do
+    post '/join' do
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
-            redirect to '/join'
+            redirect to '/failure'
         else
             @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
             @user.save
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
             redirect '/artwork'
-        else
+        else            
             redirect to '/join'
         end
     end
