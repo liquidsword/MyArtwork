@@ -5,6 +5,7 @@ class ApplicationController < Sinatra::Base
         set :public_folder, 'public'
         set :views, 'app/views'
         set :sessions_secret, "my_artwork_secret"
+    end
     
     get '/' do
         erb :index
