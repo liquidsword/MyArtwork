@@ -2,7 +2,7 @@ class ArtworkController < ApplicationController
     get '/artwork' do
         if session[:user_id]
             @artwork = Artwork.all
-            erb : 'artwork/artwork'
+            erb :'artwork/artwork'
         else
             redirect to '/login'
         end
@@ -39,7 +39,7 @@ class ArtworkController < ApplicationController
         if session[:user_id]
             @artwork = Artwork.find_by_id(params[:id])
             if @artwork.user_id == session[:user_id]
-                erb : 'artwork/edit_artwork'
+                erb :'artwork/edit_artwork'
             else
                 redirect to '/artwork'
             end
@@ -56,7 +56,7 @@ class ArtworkController < ApplicationController
         end
     end
     
-    delete '/artwork/:id/delete do
+    delete '/artwork/:id/delete' do
         @artwork = Artwork.find_by_id(params[:id])
         if session[:user_id]
             @artwork = Artwork.find_by_id(params[:id])
