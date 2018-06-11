@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     get '/join' do
         if !session[:user_id]
-            erb :'users/create_user', local:{"Show the world what you can do!"}
+            erb :'users/create_user' local:{"Show the world what you can do!"}
         else
             redirect to '/artwork'
         end
