@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     get '/join' do
         if !session[:user_id]
-            erb: 'users/create_user', local:{"Show the world what you can do!"}
+            erb :'users/create_user', local:{"Show the world what you can do!"}
         else
             redirect to '/artwork'
         end
@@ -15,16 +15,17 @@ class UsersController < ApplicationController
 
     post '/join' do
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
-            redirect to '/failure'
+            redirect to '/join'
         else
             @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
             @user.save
-                session[:user_id]=@user.id
+                session[:user_id] = @user.id
                 redirect to '/artwork'
         end
     end
 
     get '/login' do
+        @error_message = params[:error]
         if !session[:user_id]
             erb :'users/login'
         else
