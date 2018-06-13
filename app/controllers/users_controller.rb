@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     else
       redirect '/artwork'
     end
-  end
+  
 
     get '/join' do
         if !session[:user_id]
