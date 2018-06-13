@@ -5,6 +5,14 @@ class UsersController < ApplicationController
         erb :'users/show'
     end
 
+    @user = User.find(params[:id])
+    if !@user.nil? && @user == current_user
+      erb :'users/show'
+    else
+      redirect '/artwork'
+    end
+  end
+
     get '/join' do
         if !session[:user_id]
             erb :'users/create_user'
