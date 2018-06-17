@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
     
     get '/users/:slug' do
-        @user = User.find_by_slug(params[:slug])
+       if @user = User.find_by_slug(params[:slug])
         erb :'users/show'
-    end
+       end
 
-    @user = User.find(params[:id])
-    if !@user.nil? && @user == current_user
-      erb :'users/show'
-    else
-      redirect '/artwork'
-    end
+        @user = User.find(params[:id])
+            if !@user.nil? && @user == current_user
+                erb :'users/show'
+            else
+                redirect '/artwork'
+            end
+        end
   
 
     get '/join' do
