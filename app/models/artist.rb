@@ -1,5 +1,5 @@
 class Artist < ActiveRecord::Base
-    has_many :artwork
+    has_many :art_work
     has_secure_password
     
     def slug
