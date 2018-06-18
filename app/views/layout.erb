@@ -8,9 +8,9 @@
     <nav>
       <% if logged_in? %>
 
-        <a href='/artwork/new'> Create a new Masterpiece </a>
+        <a href='/artwork/new'> Display a new Masterpiece </a>
         <a href='/logout'> Log Out </a>
-        <p>Nice to have you back <%=current_user.username %></p>
+        <p>Nice to have you back <%=current_artist.artist %></p>
 
       <% else %>
         <a href='/join'> Join </a>
