@@ -1,7 +1,7 @@
 class ArtworkController < ApplicationController
     get '/artwork' do
         if session[:artist_id]
-            @artwork = Art_work.all
+            @artwork = Artwork.all
             erb :'artwork/artwork'
         else
             redirect to '/login'
