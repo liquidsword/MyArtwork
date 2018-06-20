@@ -5,7 +5,7 @@ class ArtistsController < ApplicationController
         erb :'artists/show'
        end
 
-        @artist = artist.find(params[:id])
+        @artist = Artist.find(params[:id])
             if !@artist.nil? && @artist == current_artist
                 erb :'artists/show'
             else
@@ -23,7 +23,7 @@ class ArtistsController < ApplicationController
     end
 
     post '/join' do
-        if params[:artist] == "" || params[:email] == "" || params[:password] == ""
+        if params[:artist_name] == "" || params[:email] == "" || params[:password] == ""
             redirect to '/join'
         else
             @artist = Artist.create(:artist_name => params[:artist_name], :email => params[:email], :password => params[:password])
@@ -42,7 +42,7 @@ class ArtistsController < ApplicationController
     end
 
     post '/login' do
-        artist = artist.find_by(:artist => params[:artist])
+        artist = Artist.find_by(:artist_name => params[:artist_name])
         if artist && artist.authenticate(params[:password])
             session[:artist_id] = artist.id
             redirect '/artwork'

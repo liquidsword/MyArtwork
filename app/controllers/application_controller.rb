@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
         end
 
         def current_artist
-            artist.find(session[:artist_id])
+            Artist.find(session[:artist_id])
         end
     end
 end
