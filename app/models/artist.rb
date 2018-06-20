@@ -3,11 +3,11 @@ class Artist < ActiveRecord::Base
     has_secure_password
     
     def slug
-        #artist.downcase.gsub(" ","-")
+        artist.downcase.gsub(" ","-")
     end
     
     def self.find_by_slug(slug)
-        #Artist.all.find{|artist| artist.slug == slug}
+        Artist.all.find{|artist| artist.slug == slug}
     end
  
 end
