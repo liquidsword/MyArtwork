@@ -1,7 +1,7 @@
 class CreateArtists < ActiveRecord::Migration[5.1]
   def change
     create_table :artists do |t|
-      t.string :username
+      t.string :artist_name
       t.string :email
       t.string :password
 
