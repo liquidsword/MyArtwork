@@ -26,7 +26,7 @@ class ArtistsController < ApplicationController
         if params[:artist] == "" || params[:email] == "" || params[:password] == ""
             redirect to '/join'
         else
-            @artist = Artist.create(:artist => params[:artist], :email => params[:email], :password => params[:password])
+            @artist = Artist.create(:artist_name => params[:artist_name], :email => params[:email], :password => params[:password])
                 session[:artist_id] = @artist.id
                 redirect to '/artwork'
         end
