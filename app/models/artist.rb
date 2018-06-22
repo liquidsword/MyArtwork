@@ -1,6 +1,9 @@
 class Artist < ActiveRecord::Base
-    has_many :art_work
     has_secure_password
+    has_many :art_work
+    
+    validates :email, :presence => true
+    validates :email, :uniqueness => true
     
     def slug
         artist.downcase.gsub(" ","-")
