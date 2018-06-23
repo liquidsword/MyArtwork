@@ -74,7 +74,7 @@ class ArtworkController < ApplicationController
         end
     end
 end
-end
+
             
             
 
