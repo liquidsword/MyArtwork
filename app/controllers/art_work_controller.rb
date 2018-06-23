@@ -20,8 +20,8 @@ class ArtworkController < ApplicationController
         if params[:art]== ""
             redirect to '/artwork/new'
         else
-            artist = artist.find_by_id(session[:artist_id])
-            @artwork = Artwork.create(:art => params[:art], :artist_id => artist_id)
+            artist = Artist.find_by_id(session[:artist_id])
+            @artwork = Artwork.create(:art => params[:art], :artist_id => artist.id)
             redirect to "/artwork/#{@artwork.id}"
         end
     end
@@ -43,6 +43,9 @@ class ArtworkController < ApplicationController
             else
                 redirect to '/artwork'
             end
+        else
+            redirect to '/login'
+    end
     end
         
     patch '/artwork/:id' do

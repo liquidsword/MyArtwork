@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
 
     get '/join' do
         if !session[:artist_id]
-            erb :'artists/create_artist'
+            erb :'artists/create_artist', locals: {message: "Please join before attempting to post your artwork"}
         else
             redirect to '/artwork'
         end
