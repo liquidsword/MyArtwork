@@ -1,6 +1,6 @@
 class Artist < ActiveRecord::Base
     has_secure_password
-    has_many :artworks
+    has_many :art_works
     
     validates :email, :presence => true
     validates :email, :uniqueness => true
