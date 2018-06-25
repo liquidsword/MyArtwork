@@ -1,6 +1,6 @@
 <h2>Add New ArtWork</h2>
 
-    <form method="POST" action="/artwork/<%=@artwork.id %>">
+    <form method="POST" action="/artwork/<%@artwork.id %>">
     <input id="hidden" type="hidden" name="_method" value="PATCH">
     <input type = "text" name="art" value="<%@artwork.art%>">
     <input type = "submit" value="submit" >
