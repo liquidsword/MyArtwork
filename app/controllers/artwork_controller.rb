@@ -1,7 +1,7 @@
 class ArtworkController < ApplicationController
     get '/artwork' do
         redirect_if_not_logged_in
-            @artwork = artwork.all
+            #@artwork = artwork.all
             erb :'artwork/index'
     end
 
