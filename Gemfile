@@ -13,6 +13,8 @@ gem 'thin'
 gem 'shotgun'
 gem 'require_all'
 
+gem "rack", ">= 2.0.6"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
